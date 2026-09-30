@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Radar de Ofertas - Autorização</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f5f7fa;
+      text-align: center;
+      padding: 50px 20px;
+    }
+
+    .box {
+      max-width: 650px;
+      margin: auto;
+      background: white;
+      padding: 30px;
+      border-radius: 14px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.12);
+    }
+
+    h1 {
+      color: #084a9e;
+    }
+
+    #code {
+      word-break: break-all;
+      background: #eef3f8;
+      padding: 15px;
+      border-radius: 8px;
+      margin-top: 20px;
+      font-family: monospace;
+    }
+  </style>
+</head>
+
+<body>
+
+<div class="box">
+
+  <h1>Radar de Ofertas</h1>
+
+  <p>Autorização do Mercado Livre recebida.</p>
+
+  <p>Código de autorização:</p>
+
+  <div id="code">Aguardando código...</div>
+
+</div>
+
+<script>
+
+const params = new URLSearchParams(window.location.search);
+
+const code = params.get("code");
+
+if (code) {
+    document.getElementById("code").textContent = code;
+} else {
+    document.getElementById("code").textContent =
+        "Nenhum código de autorização recebido.";
+}
+
+</script>
+
+</body>
+</html>
